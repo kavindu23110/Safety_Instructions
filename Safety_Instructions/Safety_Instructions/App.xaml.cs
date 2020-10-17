@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Safety_Instructions.Services;
 using Safety_Instructions.Views;
+using Safety_Instructions.Views.Home;
 
 namespace Safety_Instructions
 {
@@ -14,7 +15,7 @@ namespace Safety_Instructions
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new HomePage();
         }
 
         protected override void OnStart()
