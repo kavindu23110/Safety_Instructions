@@ -4,21 +4,31 @@
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="Safety_Instructions.Views.Home.HomePage">
     <ContentPage.Content>
+        <StackLayout Margin="10">
 
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label>Home
-            </Label>
+            <!--    <forms:AnimationView 
+                
+    x:Name="animationView"
+    Animation="Safe.json"
+    AnimationSource="AssetOrBundle"
+    WidthRequest="300"         
+    HeightRequest="300"         
+    VerticalOptions="FillAndExpand"
+    HorizontalOptions="FillAndExpand" />-->
+
+            <Label Text="{Binding MyProperty,Mode=TwoWay}"></Label>
             <forms:AnimationView 
-	x:Name="animationView" 
+                                       
+                
+    x:Name="animationView"
+    Animation="{Binding MyProperty,Mode=TwoWay}"
 
-	Animation="c.json" 
-	
-	AutoPlay="True"
-WidthRequest="300"
-                HeightRequest="300"
+    WidthRequest="300"
+                                        
+    HeightRequest="300"         
+    VerticalOptions="FillAndExpand"
+    HorizontalOptions="FillAndExpand" />
 
-	VerticalOptions="FillAndExpand" 
-	HorizontalOptions="FillAndExpand" />
 
         </StackLayout>
     </ContentPage.Content>

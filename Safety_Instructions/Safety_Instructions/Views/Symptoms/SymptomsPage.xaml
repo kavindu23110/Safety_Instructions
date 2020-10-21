@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Safety_Instructions.Views.Symptoms.SymptomsPage">
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+
+
+
+            <CarouselView ItemsSource="{Binding    lstInstructions}" >
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                         x:Name="InstructionFrame"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="500"
+                                 
+                                   WidthRequest="400"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label Text="{Binding Description,Mode=TwoWay}" HorizontalOptions="Center" FontSize="Title"></Label>
+                                    <forms:AnimationView 
+                                       
+                
+    x:Name="animationView"
+    Animation="{Binding AnimationJson ,Mode=TwoWay}"
+    WidthRequest="{Binding  WidthRequest, Source={x:Reference Name=InstructionFrame}}"                     
+    HeightRequest="300"         
+    VerticalOptions="FillAndExpand"
+    HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

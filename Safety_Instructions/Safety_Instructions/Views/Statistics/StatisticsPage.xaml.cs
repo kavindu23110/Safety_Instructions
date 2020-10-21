@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Safety_Instructions.Views.Home
+namespace Safety_Instructions.Views.Statistics
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class StatisticsPage : CarouselPage
     {
-        public HomePage()
+        public StatisticsPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.Home.HomePageViewModel();
+            BindingContext = new ViewModels.Statistics.StatisticsViewModel();
         }
     }
 }

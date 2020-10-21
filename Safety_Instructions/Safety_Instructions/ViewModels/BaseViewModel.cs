@@ -21,7 +21,7 @@ namespace Safety_Instructions.ViewModels
             set { SetProperty(ref isBusy, value); }
         }
 
-        string title = string.Empty;
+      public  string title = string.Empty;
         public string Title
         {
             get { return title; }

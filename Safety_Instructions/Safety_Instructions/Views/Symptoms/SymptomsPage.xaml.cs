@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Safety_Instructions.Views.Home
+namespace Safety_Instructions.Views.Symptoms
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class SymptomsPage : ContentPage
     {
-        public HomePage()
+        public SymptomsPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.Home.HomePageViewModel();
         }
     }
 }
