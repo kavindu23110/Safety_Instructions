@@ -1,20 +1,9 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Safety_Instructions.Services;
-using Safety_Instructions.Views;
-using Safety_Instructions.Views.Home;
-using System.Collections.Generic;
-using Safety_Instructions.Models;
-using Safety_Instructions.Views.Instructions;
-using Safety_Instructions.Data;
-using System.IO;
+﻿using Safety_Instructions.Data;
 using Safety_Instructions.Data.Models;
-using Xamarin.Forms.PlatformConfiguration;
-using Android.Graphics;
-using Safety_Instructions.Views.Statistics;
-using Safety_Instructions.Views.EmergencyDialer;
-using Safety_Instructions.Views.Symptoms;
+using Safety_Instructions.Views.Profile;
+using System;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Safety_Instructions
 {
@@ -25,8 +14,22 @@ namespace Safety_Instructions
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new StatisticsPage();
+            ChangeNavigationToFirsttimelauncher();
+
+        }
+
+        private void ChangeNavigationToFirsttimelauncher()
+        {
+            var firstLaunch = VersionTracking.IsFirstLaunchEver;
+            if (firstLaunch)
+            {
+                MainPage = new ProfilePage();
+            }
+            else
+            {
+                MainPage = new AppShell();
+            }
+
         }
 
         static DataContext database;
@@ -44,7 +47,7 @@ namespace Safety_Instructions
         }
         protected override void OnStart()
         {
-         //  insertdataAsync();
+            //  insertdataAsync();
 
         }
 
@@ -54,9 +57,9 @@ namespace Safety_Instructions
             try
             {
 
-                var x = new Instruction() { Id = 0, AnimationJson ="WashHands.json", Title = "Keep safe" ,Description="aerfbgsdfnhfn"};
-                var y= new Symptoms() { Id = 0, AnimationJson = "cough.json", Title = "Cough", Description = "aerfbgsdfnhfn" };
-               // await Database.GetData_Instructions().Insert(x);
+                var x = new Instruction() { Id = 0, AnimationJson = "WashHands.json", Title = "Keep safe", Description = "aerfbgsdfnhfn" };
+                var y = new Symptoms() { Id = 0, AnimationJson = "cough.json", Title = "Cough", Description = "aerfbgsdfnhfn" };
+                // await Database.GetData_Instructions().Insert(x);
                 await Database.GetData_Symptoms().Insert(y);
             }
             catch (Exception ex)

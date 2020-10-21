@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
 namespace Safety_Instructions.ViewModels.Symptoms
 {
@@ -11,7 +8,9 @@ namespace Safety_Instructions.ViewModels.Symptoms
         public ObservableCollection<Data.Models.Symptoms> lstSymptoms { get; set; }
         public SymptomsViewModel()
         {
+
             LoadInstructionsAsync();
+
         }
 
 

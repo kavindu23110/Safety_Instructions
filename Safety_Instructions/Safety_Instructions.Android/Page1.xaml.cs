@@ -2,12 +2,12 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Safety_Instructions.ViewModels.Instructions
+namespace Safety_Instructions.Droid
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InstructionsLandingPage : ContentPage
+    public partial class Page1 : ContentPage
     {
-        public InstructionsLandingPage()
+        public Page1()
         {
             InitializeComponent();
         }

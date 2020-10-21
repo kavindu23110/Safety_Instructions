@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 
 namespace Safety_Instructions.Data.Models
 {
-  public  class Symptoms
+    public class Symptoms : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public String Title { get; set; }
         public String Description { get; set; }
         public String AnimationJson { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

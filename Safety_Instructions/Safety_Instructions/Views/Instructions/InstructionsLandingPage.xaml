@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-             x:Class="Safety_Instructions.Views.Instructions.InstructionsLandingPage">
+             x:Class="Safety_Instructions.Views.Instructions.InstructionsLandingPage"
+             Title="Instructions">
     <ContentPage.Content>
         <StackLayout Margin="10,20,10,20">
             <Frame>
@@ -30,7 +31,8 @@
     Animation="PlayButton.json"
     AnimationSource="AssetOrBundle"
     WidthRequest="150"         
-    HeightRequest="150"         
+    HeightRequest="150"  
+  Clicked="animationView_Clicked"
     VerticalOptions="Center"
     HorizontalOptions="Center" />
         </StackLayout>

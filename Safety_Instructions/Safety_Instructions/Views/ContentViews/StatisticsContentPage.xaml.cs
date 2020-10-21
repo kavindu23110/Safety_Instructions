@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Safety_Instructions.Views.ContentViews
 {
@@ -15,7 +9,7 @@ namespace Safety_Instructions.Views.ContentViews
     {
 
         public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(StatisticsContentPage), string.Empty);
-        public static readonly BindableProperty CountProperty = BindableProperty.Create(nameof(Count), typeof(int), typeof(StatisticsContentPage),0);
+        public static readonly BindableProperty CountProperty = BindableProperty.Create(nameof(Count), typeof(int), typeof(StatisticsContentPage), 0);
 
         public static readonly BindableProperty IconImageSourceProperty = BindableProperty.Create(nameof(IconImageSource), typeof(ImageSource), typeof(StatisticsContentPage), default(ImageSource));
 
@@ -31,7 +25,7 @@ namespace Safety_Instructions.Views.ContentViews
             set => SetValue(StatisticsContentPage.CountProperty, value);
         }
 
-   
+
 
         public ImageSource IconImageSource
         {
@@ -39,11 +33,11 @@ namespace Safety_Instructions.Views.ContentViews
             set => SetValue(StatisticsContentPage.IconImageSourceProperty, value);
         }
 
- 
+
         public StatisticsContentPage()
         {
             InitializeComponent();
-          
+
         }
     }
 }

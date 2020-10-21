@@ -6,7 +6,9 @@
               BackgroundColor="LightGray">
 
     <ContentPage.Content>
+    
         <StackLayout Margin="10">
+
             <CarouselView ItemsSource="{Binding lstSymptoms}" >
 
                 <CarouselView.ItemTemplate>
@@ -32,8 +34,7 @@
                                            FontSize="Subtitle"></Label>
                                     <forms:AnimationView               
                                             x:Name="animationView"
-                                            Animation="{Binding AnimationJson ,Mode=TwoWay}"
-                                            WidthRequest="{Binding  WidthRequest, Source={x:Reference Name=InstructionFrame}}"                     
+                                            Animation="{Binding AnimationJson ,Mode=TwoWay}"            
                                             HeightRequest="300"    
                                             AutoPlay="True"
                                             VerticalOptions="FillAndExpand"

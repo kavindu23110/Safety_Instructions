@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Safety_Instructions.Models;
+using Safety_Instructions.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
-using Safety_Instructions.Models;
-using Safety_Instructions.Services;
 
 namespace Safety_Instructions.ViewModels
 {
@@ -21,7 +19,7 @@ namespace Safety_Instructions.ViewModels
             set { SetProperty(ref isBusy, value); }
         }
 
-      public  string title = string.Empty;
+        public string title = string.Empty;
         public string Title
         {
             get { return title; }

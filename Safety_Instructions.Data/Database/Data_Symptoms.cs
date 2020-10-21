@@ -5,14 +5,13 @@ using Safety_Instructions.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Safety_Instructions.Data.Database
 {
-   public class Data_Symptoms : IDatabase<Symptoms>
+    public class Data_Symptoms : IDatabase<Symptoms>
     {
-        public FirebaseClient firebase { get ; set ; }
+        public FirebaseClient firebase { get; set; }
         public string EntityName { get; set; }
 
         public Data_Symptoms(FirebaseClient firebase)
@@ -35,7 +34,7 @@ namespace Safety_Instructions.Data.Database
            Description = item.Object.Description,
            AnimationJson = item.Object.AnimationJson,
            Id = item.Object.Id,
-           Title=item.Object.Title,
+           Title = item.Object.Title,
 
        }).ToList();
         }

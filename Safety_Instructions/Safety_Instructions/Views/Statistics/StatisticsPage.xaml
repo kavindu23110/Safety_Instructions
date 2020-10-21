@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
               xmlns:controls="clr-namespace:Safety_Instructions.Views.ContentViews"
               x:Class="Safety_Instructions.Views.Statistics.StatisticsPage"
-      >
+      Title="Statistics">
     <ContentPage>
         <ContentPage.Content>
             <StackLayout Margin="10">

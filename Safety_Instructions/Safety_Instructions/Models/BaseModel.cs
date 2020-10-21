@@ -1,12 +1,10 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace Safety_Instructions.Models
 {
-   public class BaseModel: System.ComponentModel.INotifyPropertyChanged
+    public class BaseModel : System.ComponentModel.INotifyPropertyChanged
     {
         public BaseModel()
         {

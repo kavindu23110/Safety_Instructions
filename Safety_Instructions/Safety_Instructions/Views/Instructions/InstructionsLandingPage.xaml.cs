@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +11,11 @@ namespace Safety_Instructions.Views.Instructions
         public InstructionsLandingPage()
         {
             InitializeComponent();
+        }
+
+        private async void animationView_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.Navigation.PushModalAsync(new InstructionsPage());
         }
 
     }

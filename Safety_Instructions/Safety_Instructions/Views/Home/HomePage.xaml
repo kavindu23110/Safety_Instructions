@@ -19,22 +19,22 @@
             <Frame Margin="10">
                 <StackLayout>
                     <Label 
-                    Text="Safe From Covid" 
+                    Text="We Care Covid-19" 
                     HorizontalOptions="CenterAndExpand" 
                     FontSize="Title"></Label>
-                    <Label Text="All things you need to know from Covid"
+                    <!--<Label Text="All things you need to know from Covid"
                            Margin="10"
-                           HorizontalOptions="CenterAndExpand"></Label>
+                           HorizontalOptions="CenterAndExpand"></Label>-->
                 </StackLayout>
 
             </Frame>
-            <Frame Margin="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <Frame  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <StackLayout>
-                    <!--<Button Text="How To Protect" VerticalOptions="CenterAndExpand"  Command="InstructionsLandingCommand" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Know Syntoms" VerticalOptions="CenterAndExpand"  Command="SyntomsLandingCommand" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Statistics" VerticalOptions="CenterAndExpand"  Command="StatisticsCommand" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Emergency Dialer" VerticalOptions="CenterAndExpand" Command="EmergencyDialCommand" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Useful Links" VerticalOptions="CenterAndExpand" Command="linksCommand" HorizontalOptions="CenterAndExpand"></Button>-->
+                    <Button Text="How To Protect" VerticalOptions="CenterAndExpand"  Command="{Binding InstructionsLandingCommand}" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Know Syntoms" VerticalOptions="CenterAndExpand"  Command="{Binding SyntomsLandingCommand}" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Statistics" VerticalOptions="CenterAndExpand"  Command="{Binding StatisticsCommand}" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Emergency Dialer" VerticalOptions="CenterAndExpand" Command="{Binding EmergencyDialCommand}" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Useful Links" VerticalOptions="CenterAndExpand" Command="{Binding linksCommand}" HorizontalOptions="CenterAndExpand"></Button>
                     
                 </StackLayout>
 

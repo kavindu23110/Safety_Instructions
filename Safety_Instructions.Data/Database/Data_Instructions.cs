@@ -5,16 +5,14 @@ using Safety_Instructions.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Safety_Instructions.Data.Database
 {
-   public class Data_Instructions : IDatabase<Instruction>
+    public class Data_Instructions : IDatabase<Instruction>
     {
-        public FirebaseClient firebase { get ; set; }
-        public string EntityName { get ; set ; }
+        public FirebaseClient firebase { get; set; }
+        public string EntityName { get; set; }
 
         public Data_Instructions(FirebaseClient firebase)
         {
@@ -44,19 +42,19 @@ namespace Safety_Instructions.Data.Database
                 Description = item.Object.Description,
                 AnimationJson = item.Object.AnimationJson,
                 Id = item.Object.Id,
-                Title=item.Object.Title,
+                Title = item.Object.Title,
 
             }).ToList();
         }
 
         public async Task Insert(Instruction Entity)
         {
-       
-                await firebase
-           .Child(EntityName)
-           .PostAsync(Entity, true);
-            
-          
+
+            await firebase
+       .Child(EntityName)
+       .PostAsync(Entity, true);
+
+
         }
 
         public async Task Update(Instruction Entity)

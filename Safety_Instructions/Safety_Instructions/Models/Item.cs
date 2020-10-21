@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Safety_Instructions.Models
+﻿namespace Safety_Instructions.Models
 {
     public class Item
     {
