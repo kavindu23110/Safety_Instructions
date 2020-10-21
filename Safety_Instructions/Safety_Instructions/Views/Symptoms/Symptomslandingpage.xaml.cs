@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Safety_Instructions.Views.Symptoms
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SymptomsPage : ContentPage
+    public partial class Symptomslandingpage : ContentPage
     {
-        public SymptomsPage()
+        public Symptomslandingpage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.Symptoms.SymptomsViewModel();
         }
     }
 }

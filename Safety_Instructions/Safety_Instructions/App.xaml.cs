@@ -13,6 +13,8 @@ using Safety_Instructions.Data.Models;
 using Xamarin.Forms.PlatformConfiguration;
 using Android.Graphics;
 using Safety_Instructions.Views.Statistics;
+using Safety_Instructions.Views.EmergencyDialer;
+using Safety_Instructions.Views.Symptoms;
 
 namespace Safety_Instructions
 {
@@ -42,7 +44,7 @@ namespace Safety_Instructions
         }
         protected override void OnStart()
         {
-           insertdataAsync();
+         //  insertdataAsync();
 
         }
 
@@ -52,9 +54,10 @@ namespace Safety_Instructions
             try
             {
 
-                var x = new Instruction() { Id = 0, AnimationJson ="Safe.json", Description = "Keep safe" };
-
-                await Database.GetData_Instructions().Insert(x);
+                var x = new Instruction() { Id = 0, AnimationJson ="WashHands.json", Title = "Keep safe" ,Description="aerfbgsdfnhfn"};
+                var y= new Symptoms() { Id = 0, AnimationJson = "cough.json", Title = "Cough", Description = "aerfbgsdfnhfn" };
+               // await Database.GetData_Instructions().Insert(x);
+                await Database.GetData_Symptoms().Insert(y);
             }
             catch (Exception ex)
             {

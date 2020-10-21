@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Safety_Instructions.Data.Database
 {
-    class Data_Symptoms : IDatabase<Symptoms>
+   public class Data_Symptoms : IDatabase<Symptoms>
     {
         public FirebaseClient firebase { get ; set ; }
         public string EntityName { get; set; }
@@ -18,21 +18,12 @@ namespace Safety_Instructions.Data.Database
         public Data_Symptoms(FirebaseClient firebase)
         {
             this.firebase = firebase;
-            EntityName = nameof(Instruction);
+            EntityName = nameof(Symptoms);
         }
 
         public Task Delete(Symptoms Entity)
         {
             throw new NotImplementedException();
-        }
-
-        public async Task<Symptoms> Findasync(Func<Symptoms, bool> predicate)
-        {
-            var all = 
-            await firebase
-              .Child(EntityName)
-              .OnceAsync<Symptoms>();
-            return all.Where(predicate).FirstOrDefault();
         }
 
         public async Task<List<Symptoms>> GetAsync()
@@ -51,9 +42,17 @@ namespace Safety_Instructions.Data.Database
 
         public async Task Insert(Symptoms Entity)
         {
-            await firebase
-      .Child(EntityName)
-      .PostAsync(Entity, true);
+            try
+            {
+                await firebase
+.Child(EntityName)
+.PostAsync(Entity, true);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         public async Task Update(Symptoms Entity)
@@ -66,6 +65,11 @@ namespace Safety_Instructions.Data.Database
               .Child(EntityName)
               .Child(toUpdate.Key)
               .PutAsync(Entity);
+        }
+
+        public Task<Symptoms> Findasync(Func<Symptoms, bool> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

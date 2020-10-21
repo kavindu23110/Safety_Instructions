@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Safety_Instructions.Views.Instructions.InstructionsLandingPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,20,10,20">
+            <Frame>
+         
+                    <Label Text="Safety Precautions"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title"/>
+                  
+          
+            </Frame>
+
+            <Frame Margin="0,10,0,0">
+
+       
+                <Label 
+                         HorizontalOptions="CenterAndExpand"
+                        Margin="5"
+                        FontSize="Subtitle"
+                        Text="These instructions will help you to Keep safe from Covid-19.These are preapared Axccording To Guidelines By WHO. "></Label>
+
+            </Frame>
+
+            <forms:AnimationView 
+                Margin="0,50,0,0"
+    x:Name="animationView"
+    Animation="PlayButton.json"
+    AnimationSource="AssetOrBundle"
+    WidthRequest="150"         
+    HeightRequest="150"         
+    VerticalOptions="Center"
+    HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

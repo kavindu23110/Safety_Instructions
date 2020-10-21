@@ -2,10 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-             x:Class="Safety_Instructions.Views.Home.HomePage">
+             x:Class="Safety_Instructions.Views.Home.HomePage"
+             BackgroundImageSource="Background.jpg"
+            >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="WidthRequest" Value="300"></Setter>
+                <Setter Property="Padding" Value="0,10,0,10"></Setter>
+                <Setter Property="Margin" Value="0,10,0,10"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Margin="10">
+            <Frame Margin="10">
+                <StackLayout>
+                    <Label 
+                    Text="Safe From Covid" 
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="Title"></Label>
+                    <Label Text="All things you need to know from Covid"
+                           Margin="10"
+                           HorizontalOptions="CenterAndExpand"></Label>
+                </StackLayout>
 
+            </Frame>
+            <Frame Margin="10" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <!--<Button Text="How To Protect" VerticalOptions="CenterAndExpand"  Command="InstructionsLandingCommand" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Know Syntoms" VerticalOptions="CenterAndExpand"  Command="SyntomsLandingCommand" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Statistics" VerticalOptions="CenterAndExpand"  Command="StatisticsCommand" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Emergency Dialer" VerticalOptions="CenterAndExpand" Command="EmergencyDialCommand" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Useful Links" VerticalOptions="CenterAndExpand" Command="linksCommand" HorizontalOptions="CenterAndExpand"></Button>-->
+                    
+                </StackLayout>
+
+            </Frame>
             <!--    <forms:AnimationView 
                 
     x:Name="animationView"
@@ -16,7 +49,7 @@
     VerticalOptions="FillAndExpand"
     HorizontalOptions="FillAndExpand" />-->
 
-            <Label Text="{Binding MyProperty,Mode=TwoWay}"></Label>
+            <!--<Label Text="{Binding MyProperty,Mode=TwoWay}"></Label>
             <forms:AnimationView 
                                        
                 
@@ -27,7 +60,7 @@
                                         
     HeightRequest="300"         
     VerticalOptions="FillAndExpand"
-    HorizontalOptions="FillAndExpand" />
+    HorizontalOptions="FillAndExpand" />-->
 
 
         </StackLayout>

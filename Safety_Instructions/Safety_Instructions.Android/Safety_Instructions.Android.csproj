@@ -81,6 +81,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
     <AndroidAsset Include="Assets\Safe.json" />
+    <AndroidAsset Include="Assets\PlayButton.json" />
+    <AndroidAsset Include="Assets\WashHands.json" />
+    <AndroidAsset Include="Assets\cleanhands.json" />
+    <AndroidAsset Include="Assets\cough.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -114,6 +118,21 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\newcases.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\rip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\recovered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\patient.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

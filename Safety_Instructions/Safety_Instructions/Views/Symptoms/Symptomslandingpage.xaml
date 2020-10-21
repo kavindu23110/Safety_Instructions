@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Safety_Instructions.Views.Symptoms.Symptomslandingpage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,20,10,20">
+            <Frame>
+
+                <Label Text="Symptoms"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title"/>
+
+
+            </Frame>
+
+            <Frame Margin="0,10,0,0">
+
+
+                <Label 
+                         HorizontalOptions="CenterAndExpand"
+                        Margin="5"
+                        FontSize="Subtitle"
+                        Text="If you Feel You have these symptoms.please contact the Public health care Officer.Or use Emergency Dial to Contact Covid emergency center "></Label>
+
+            </Frame>
+
+            <forms:AnimationView 
+                Margin="0,50,0,0"
+    x:Name="animationView"
+    Animation="PlayButton.json"
+    AnimationSource="AssetOrBundle"
+    WidthRequest="150"         
+    HeightRequest="150"         
+    VerticalOptions="Center"
+    HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

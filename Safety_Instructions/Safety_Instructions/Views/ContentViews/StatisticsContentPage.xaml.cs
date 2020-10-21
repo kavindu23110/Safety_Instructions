@@ -10,45 +10,36 @@ using Xamarin.Forms.Xaml;
 
 namespace Safety_Instructions.Views.ContentViews
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StatisticsContentPage : ContentView,INotifyPropertyChanged
+    [DesignTimeVisible(true)]
+    public partial class StatisticsContentPage : ContentView
     {
 
-        public static readonly BindableProperty Iconproperty = BindableProperty.Create(
-    "Icons",
-    typeof(string),
-    typeof(StatisticsContentPage),
-    string.Empty);
+        public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(StatisticsContentPage), string.Empty);
+        public static readonly BindableProperty CountProperty = BindableProperty.Create(nameof(Count), typeof(int), typeof(StatisticsContentPage),0);
 
-        public static readonly BindableProperty titleproperty = BindableProperty.Create(
-"Titles",
-typeof(string),
-typeof(Label),
-string.Empty);
+        public static readonly BindableProperty IconImageSourceProperty = BindableProperty.Create(nameof(IconImageSource), typeof(ImageSource), typeof(StatisticsContentPage), default(ImageSource));
 
-        public static readonly BindableProperty StaticNumberproperty = BindableProperty.Create(
-"StaticNumbers",
-typeof(string),
-typeof(Label),
-string.Empty);
-
-        public string ImageSource
+        public string Title
         {
-            get => (string)GetValue(StatisticsContentPage.Iconproperty);
-            set => SetValue(StatisticsContentPage.Iconproperty, value);
+            get => (string)GetValue(StatisticsContentPage.CardTitleProperty);
+            set => SetValue(StatisticsContentPage.CardTitleProperty, value);
         }
 
-        public string TitleText
+        public int Count
         {
-            get => (string)GetValue(StatisticsContentPage.titleproperty);
-            set => SetValue(StatisticsContentPage.titleproperty, value);
-        } 
-        
-        public string Count
-        {
-            get => (string)GetValue(StatisticsContentPage.StaticNumberproperty);
-            set => SetValue(StatisticsContentPage.StaticNumberproperty, value);
+            get => (int)GetValue(StatisticsContentPage.CountProperty);
+            set => SetValue(StatisticsContentPage.CountProperty, value);
         }
+
+   
+
+        public ImageSource IconImageSource
+        {
+            get => (ImageSource)GetValue(StatisticsContentPage.IconImageSourceProperty);
+            set => SetValue(StatisticsContentPage.IconImageSourceProperty, value);
+        }
+
+ 
         public StatisticsContentPage()
         {
             InitializeComponent();

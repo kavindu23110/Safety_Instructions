@@ -2,70 +2,35 @@
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
               xmlns:controls="clr-namespace:Safety_Instructions.Views.ContentViews"
-              x:Class="Safety_Instructions.Views.Statistics.StatisticsPage">
+              x:Class="Safety_Instructions.Views.Statistics.StatisticsPage"
+      >
     <ContentPage>
         <ContentPage.Content>
-            <StackLayout>
+            <StackLayout Margin="10">
                 <Label FontSize="Title" HorizontalOptions="CenterAndExpand">Local Statistics</Label>
                 <Label FontSize="Subtitle" HorizontalOptions="CenterAndExpand" Text="{Binding CoronaApiResult.Data.UpdateDateTime}"></Label>
-                <!--<Frame WidthRequest="50">
-                    <Grid>
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="25"  ></RowDefinition>
-                            <RowDefinition Height="25"  ></RowDefinition>
-
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"   ></ColumnDefinition>
-                            <ColumnDefinition Width="*"   ></ColumnDefinition>
-                            <ColumnDefinition Width="50"  ></ColumnDefinition>
-
-                        </Grid.ColumnDefinitions>
-                        <Image Source="newcases.png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
-                        <Label Text= "New Cases" HorizontalOptions="CenterAndExpand" FontSize="Large" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"></Label>
-                        <Label Text="{Binding CoronaApiResult.Data.LocalNewCases}" FontSize="Large" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Label>
-                    </Grid>
-                  </Frame>
-                <Frame WidthRequest="50">
-                    <Grid>
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="25"  ></RowDefinition>
-                            <RowDefinition Height="25"  ></RowDefinition>
-
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"   ></ColumnDefinition>
-                            <ColumnDefinition Width="*"   ></ColumnDefinition>
-                            <ColumnDefinition Width="50"  ></ColumnDefinition>
-
-                        </Grid.ColumnDefinitions>
-                        <Image Source="newcases.png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
-                        <Label Text= "Active Cases" HorizontalOptions="CenterAndExpand" FontSize="Large" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"></Label>
-                        <Label Text="{Binding CoronaApiResult.Data.LocalActiveCases}" FontSize="Large" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Label>
-                    </Grid>
-                </Frame>
-
-                <Frame WidthRequest="50">
-                    <Grid>
-                        <Grid.RowDefinitions >
-                            <RowDefinition Height="25"  ></RowDefinition>
-                            <RowDefinition Height="25"  ></RowDefinition>
-
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"   ></ColumnDefinition>
-                            <ColumnDefinition Width="*"   ></ColumnDefinition>
-                            <ColumnDefinition Width="50"  ></ColumnDefinition>
-
-                        </Grid.ColumnDefinitions>
-                        <Image Source="newcases.png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
-                        <Label Text= "Recovered cases" HorizontalOptions="CenterAndExpand" FontSize="Large" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"></Label>
-                        <Label Text="{Binding CoronaApiResult.Data.LocalRecovered}" FontSize="Large" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Label>
-                    </Grid>
-                </Frame>-->
-              <controls:StatisticsContentPage ImageSource="newcases.png" TitleText= "Active Cases"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage ImageSource="newcases.png" TitleText= "Active Cases" Count="5"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "Total cases" Count="{Binding CoronaApiResult.Data.LocalTotalCases }" IconImageSource="active.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "Active cases" Count="{Binding CoronaApiResult.Data.LocalActiveCases }" IconImageSource="patient.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "New cases" Count="{Binding CoronaApiResult.Data.LocalNewCases}" IconImageSource="newcases.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "Recovered cases" Count="{Binding CoronaApiResult.Data.LocalRecovered}" IconImageSource="recovered.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "New Deaths" Count="{Binding CoronaApiResult.Data.LocalNewDeaths}" IconImageSource="rip.png"></controls:StatisticsContentPage>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
+
+    <ContentPage>
+        <ContentPage.Content>
+            <StackLayout Margin="10">
+                <Label FontSize="Title" HorizontalOptions="CenterAndExpand">Global Statistics</Label>
+                <Label FontSize="Subtitle" HorizontalOptions="CenterAndExpand" Text="{Binding CoronaApiResult.Data.UpdateDateTime}"></Label>
+                <controls:StatisticsContentPage Title= "Total cases" Count="{Binding CoronaApiResult.Data.GlobalTotalCases }" IconImageSource="active.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "New cases" Count="{Binding CoronaApiResult.Data.GlobalNewCases}" IconImageSource="newcases.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "Recovered cases" Count="{Binding CoronaApiResult.Data.GlobalRecovered}" IconImageSource="recovered.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "Deaths" Count="{Binding CoronaApiResult.Data.GlobalNewDeaths }" IconImageSource="rip.png"></controls:StatisticsContentPage>
+                <controls:StatisticsContentPage Title= "New Deaths" Count="{Binding CoronaApiResult.Data.GlobalDeaths}" IconImageSource="rip.png"></controls:StatisticsContentPage>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+
 </CarouselPage>

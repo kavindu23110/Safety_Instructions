@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Safety_Instructions.Views.Symptoms
+namespace Safety_Instructions.Views.Instructions
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SymptomsPage : ContentPage
+    public partial class InstructionsLandingPage : ContentPage
     {
-        public SymptomsPage()
+        public InstructionsLandingPage()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.Symptoms.SymptomsViewModel();
         }
+
     }
 }

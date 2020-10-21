@@ -44,6 +44,7 @@ namespace Safety_Instructions.Data.Database
                 Description = item.Object.Description,
                 AnimationJson = item.Object.AnimationJson,
                 Id = item.Object.Id,
+                Title=item.Object.Title,
 
             }).ToList();
         }
