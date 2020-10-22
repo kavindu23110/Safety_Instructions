@@ -1,7 +1,4 @@
-﻿using Safety_Instructions.Views.EmergencyDialer;
-using Safety_Instructions.Views.Statistics;
-using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -43,7 +40,7 @@ namespace Safety_Instructions.ViewModels.Home
 
         private async void Onlinks(object obj)
         {
-           // await Shell.Current.Navigation.PushAsync(new EmergencyDialer());
+            // await Shell.Current.Navigation.PushAsync(new EmergencyDialer());
         }
 
         private async void OnSyntomsLanding(object obj)
