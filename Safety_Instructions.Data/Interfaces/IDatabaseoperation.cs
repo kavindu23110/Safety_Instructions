@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Safety_app.Data.Interfaces
-
+namespace Safety_Instructions.Data.Interfaces
 {
-    public interface IDatabasesqlite<T>
+  public  interface IdatabaseOperation
     {
-        Task<List<T>> GetAsync();
-        Task<int> saveAsync(T Entity);
-        Task<int> DeleteAsync(T Entity);
     }
 }

@@ -30,6 +30,6 @@ namespace Safety_Instructions.Data.Database.Sqlite
             return _database.Table<Symptoms>().FirstOrDefaultAsync();
         }
 
-    
+
     }
 }

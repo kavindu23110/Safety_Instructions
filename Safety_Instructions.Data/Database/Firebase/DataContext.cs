@@ -1,13 +1,14 @@
 ﻿using Firebase.Database;
-using Safety_Instructions.Data.Database;
+using Safety_app.Data.Interfaces;
+using Safety_Instructions.Data.Models;
 
-namespace Safety_Instructions.Data
+namespace Safety_Instructions.Data.Database.Firebase
 {
     public class DataContext
     {
         private static FirebaseClient firebase { get; set; }
-        private static Data_Instructions Data_Instructions { get; set; }
-        private static Data_Symptoms Data_Symptoms { get; set; }
+        private static IDatabaseCommon<Instruction> Data_Instructions { get; set; }
+        private static IDatabaseCommon<Symptoms> Data_Symptoms { get; set; }
 
         public DataContext(string dbPath)
         {
@@ -20,12 +21,12 @@ namespace Safety_Instructions.Data
             Data_Symptoms = new Data_Symptoms(firebase);
 
         }
-        public Data_Instructions GetData_Instructions()
+        public IDatabaseCommon<Instruction> GetData_Instructions()
         {
             return Data_Instructions;
         }
 
-        public Data_Symptoms GetData_Symptoms()
+        public IDatabaseCommon<Symptoms> GetData_Symptoms()
         {
             return Data_Symptoms;
         }

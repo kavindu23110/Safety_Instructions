@@ -1,5 +1,6 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
+using Safety_app.Data.Interfaces;
 using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using System;
@@ -7,9 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Safety_Instructions.Data.Database
+namespace Safety_Instructions.Data.Database.Firebase
 {
-    public class Data_Instructions : IDatabase<Instruction>
+    public class Data_Instructions : IDatabaseCommon<Instruction>
     {
         public FirebaseClient firebase { get; set; }
         public string EntityName { get; set; }

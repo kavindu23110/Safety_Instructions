@@ -1,7 +1,10 @@
 ﻿using Safety_Instructions.Data;
+using Safety_Instructions.Data.Database;
+using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using Safety_Instructions.Views.Profile;
 using System;
+using System.IO;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -32,15 +35,16 @@ namespace Safety_Instructions
 
         }
 
-        static DataContext database;
+        static IDatabase database;
 
-        public static DataContext Database
+        public static IDatabase Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new DataContext("https://testproj-f4c94.firebaseio.com/");
+                    var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "sqlite.db3");
+                    database = new Database(path,"https://testproj-f4c94.firebaseio.com/");
                 }
                 return database;
             }

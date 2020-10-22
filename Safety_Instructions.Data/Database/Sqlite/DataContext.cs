@@ -1,15 +1,16 @@
-﻿using SQLite;
+﻿
 
-namespace Safety_app.Data.DatabaseOperation
+using Safety_app.Data.Interfaces;
+using Safety_Instructions.Data.Models;
+using SQLite;
+
+namespace Safety_Instructions.Data.Database.Sqlite
 {
     public class DataContext
     {
         private SQLiteAsyncConnection _database;
-        public static PrescriptionOperator prescriptionOperator { get; set; }
-        public static ScheduleOperator ScheduleOperator { get; set; }
-        public static DrugOperator DrugOperator { get; set; }
-        public static DrugSchedulePrescriptionOperator DrugSchedulePrescriptionOperator { get; set; }
-
+        private IDatabaseCommon<Instruction> Data_Instructions;
+        private IDatabaseCommon<Symptoms> Data_Symptoms;
         public DataContext(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
@@ -19,30 +20,19 @@ namespace Safety_app.Data.DatabaseOperation
 
         private void SetDatabaseOnObjects()
         {
-            prescriptionOperator = new PrescriptionOperator(ref _database);
-            ScheduleOperator = new ScheduleOperator(ref _database);
-            DrugOperator = new DrugOperator(ref _database);
-            DrugSchedulePrescriptionOperator = new DrugSchedulePrescriptionOperator(ref _database);
+            Data_Instructions = new Data_Instructions(ref _database);
+            Data_Symptoms = new Data_Symptoms(ref _database);
         }
-        public PrescriptionOperator GetPrescriptionOperator()
+
+        public IDatabaseCommon<Instruction> GetData_Instructions()
         {
-            return prescriptionOperator;
+            return Data_Instructions;
         }
-        public ScheduleOperator GetScheduleOperator()
+
+        public IDatabaseCommon<Symptoms> GetData_Symptoms()
         {
-            return ScheduleOperator;
+            return Data_Symptoms;
         }
-        public DrugOperator GetDrugOperator()
-        {
-            return DrugOperator;
-        }
-        public DrugSchedulePrescriptionOperator GetDrugSchedulePrescriptionOperator()
-        {
-            return DrugSchedulePrescriptionOperator;
-        }
-        public SQLiteAsyncConnection GetDatabase()
-        {
-            return _database;
-        }
+
     }
 }

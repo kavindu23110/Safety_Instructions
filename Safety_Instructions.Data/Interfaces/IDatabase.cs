@@ -1,19 +1,12 @@
-﻿using Firebase.Database;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Safety_app.Data.Interfaces;
+using Safety_Instructions.Data.Models;
 
 namespace Safety_Instructions.Data.Interfaces
 {
-    public interface IDatabase<T>
+    public interface IDatabase
     {
-        FirebaseClient firebase { get; set; }
-        string EntityName { get; set; }
-        Task<List<T>> GetAsync();
-        Task Insert(T Entity);
-        Task Update(T Entity);
-        Task Delete(T Entity);
-
-        Task<T> Findasync(Func<T, bool> predicate);
+        bool CheckInternetConnection();
+        IDatabaseCommon<Instruction> GetData_Instructions();
+        IDatabaseCommon<Symptoms> GetData_Symptoms();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Safety_Instructions.Data.Models;
+﻿using Safety_Instructions.Data.Interfaces;
+using Safety_Instructions.Data.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;

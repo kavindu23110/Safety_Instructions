@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Safety_app.Data.DatabaseOperation
 {
-    public abstract class DatabaseOperation<T> : IDatabasesqlite<T> where T : class
+    public abstract class DatabaseOperation<T> : IDatabaseCommon<T> where T : class
     {
         public readonly SQLiteAsyncConnection _database;
         public DatabaseOperation(ref SQLiteAsyncConnection database)
@@ -16,26 +16,30 @@ namespace Safety_app.Data.DatabaseOperation
 
         }
 
+        public string EntityName { get ; set ; }
 
-        public Task<int> DeleteAsync(T Entity)
+        public Task Delete(T Entity)
         {
             return _database.DeleteAsync(Entity);
         }
+
+     
         public abstract Task<List<T>> FindAsync(Expression<Func<T, bool>> predicate);
 
         public abstract Task<List<T>> GetAsync();
         public abstract Task<T> GetSelectedAsync(Expression<Func<T, bool>> predicate);
 
-        public Task<int> saveAsync(T Entity)
+        public Task Insert(T Entity)
         {
             return _database.InsertAsync(Entity);
         }
 
-        public Task<int> updateAsync(T Entity)
+        public Task Update(T Entity)
         {
-
             return _database.UpdateAsync(Entity);
         }
+
+     
 
 
 
