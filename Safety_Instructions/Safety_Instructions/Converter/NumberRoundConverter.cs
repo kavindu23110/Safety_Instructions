@@ -8,7 +8,7 @@ namespace Safety_Instructions.Converter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var num = (decimal)value;
+            var num = int.Parse(value.ToString());
             if (num > 999999999 || num < -999999999)
             {
                 return num.ToString("0,,,.###B", CultureInfo.InvariantCulture);

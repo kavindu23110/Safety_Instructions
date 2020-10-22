@@ -5,7 +5,7 @@
              Title="Emergency Call">
     <ContentPage.Content>
         <StackLayout>
-            <Frame Margin="10" BackgroundColor="Lavender">
+            <Frame Margin="10" BackgroundColor="LightGray">
                 <StackLayout>
                     <Label 
                     Text="Emergency Service" 
@@ -17,11 +17,24 @@
 
             </Frame>
 
+            <Frame Margin="10,5,10,5" BackgroundColor="LightGray">
+                <StackLayout>
+                    <Label 
+                    Text="Connect You with Covid emergency Center" 
+                        VerticalOptions="StartAndExpand"
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="Subtitle"></Label>
+
+                </StackLayout>
+
+            </Frame>
+
             <Button Command="{Binding CallCommand}" 
                     HorizontalOptions="Center" 
                     Margin="10" 
                     VerticalOptions="Center" 
-                    Text="EmergencyCall 1999"></Button>
+                    FontSize="Title"
+                    Text="Emergency Call 1999"></Button>
             
         </StackLayout>
 

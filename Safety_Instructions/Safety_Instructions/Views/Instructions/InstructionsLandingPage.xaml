@@ -5,7 +5,7 @@
              Title="Instructions">
     <ContentPage.Content>
         <StackLayout Margin="10,20,10,20">
-            <Frame>
+            <Frame BackgroundColor="LightGray">
          
                     <Label Text="Safety Precautions"
                 VerticalOptions="StartAndExpand" 
@@ -14,14 +14,14 @@
           
             </Frame>
 
-            <Frame Margin="0,10,0,0">
+            <Frame Margin="0,10,0,0" >
 
        
                 <Label 
                          HorizontalOptions="CenterAndExpand"
                         Margin="5"
-                        FontSize="Subtitle"
-                        Text="These instructions will help you to Keep safe from Covid-19.These are preapared Axccording To Guidelines By WHO. "></Label>
+                        FontSize="Medium"
+                        Text="These instructions will help you to Keep safe from Covid-19.These are preapared According To Guidelines By WHO. "></Label>
 
             </Frame>
 

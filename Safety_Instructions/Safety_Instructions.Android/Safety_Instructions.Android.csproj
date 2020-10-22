@@ -94,6 +94,7 @@
     <AndroidAsset Include="Assets\WashHands.json" />
     <AndroidAsset Include="Assets\cleanhands.json" />
     <AndroidAsset Include="Assets\cough.json" />
+    <AndroidAsset Include="Assets\covid-19.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -129,9 +130,6 @@
     <AndroidResource Include="Resources\drawable\newcases.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\rip.png" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +151,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\t.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

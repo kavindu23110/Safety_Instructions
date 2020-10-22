@@ -1,4 +1,5 @@
 ﻿using Safety_Instructions.Views.EmergencyDialer;
+using Safety_Instructions.Views.Statistics;
 using System;
 using Xamarin.Forms;
 
@@ -13,6 +14,7 @@ namespace Safety_Instructions
 
 
             Routing.RegisterRoute(nameof(EmergencyDialer), typeof(EmergencyDialer));
+            Routing.RegisterRoute(nameof(StatisticsPage), typeof(StatisticsPage));
         }
 
 
