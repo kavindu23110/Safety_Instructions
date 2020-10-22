@@ -32,14 +32,7 @@
                     <Button Text="Know Syntoms" VerticalOptions="CenterAndExpand"  Command="{Binding SyntomsLandingCommand}" HorizontalOptions="CenterAndExpand"></Button>
                     <Button Text="Statistics" VerticalOptions="CenterAndExpand"  Command="{Binding StatisticsCommand}" HorizontalOptions="CenterAndExpand"></Button>
                     <Button Text="Emergency Dialer" VerticalOptions="CenterAndExpand" Command="{Binding EmergencyDialCommand}" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Useful Links" VerticalOptions="CenterAndExpand" Command="{Binding linksCommand}" HorizontalOptions="CenterAndExpand"></Button>
-                    
-               
-
-            
-      
-
-
+                  
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

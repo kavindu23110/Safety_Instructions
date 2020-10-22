@@ -2,7 +2,7 @@
 
 namespace Safety_Instructions.ViewModels.Symptoms
 {
-    public class SymptomsViewModel
+    public class SymptomsViewModel:BaseViewModel
     {
 
         public ObservableCollection<Data.Models.Symptoms> lstSymptoms { get; set; }

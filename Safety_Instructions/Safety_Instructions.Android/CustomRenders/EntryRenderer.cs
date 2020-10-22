@@ -44,7 +44,6 @@ namespace Safety_Instructions.Droid.CustomRenders
                 shape.SetStroke(3, Android.Graphics.Color.LightGray);
                 this.Control.SetBackground(shape);
             }
-
             this.Control.SetBackground(shape);
         }
     }
