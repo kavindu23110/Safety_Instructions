@@ -62,6 +62,9 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>4.0.4</Version>
     </PackageReference>
+    <PackageReference Include="LiteDB">
+      <Version>5.0.9</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross">
       <Version>7.0.1</Version>
     </PackageReference>

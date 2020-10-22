@@ -1,4 +1,5 @@
 ﻿using Firebase.Database;
+using Firebase.Database.Offline;
 using Safety_app.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 
@@ -12,7 +13,12 @@ namespace Safety_Instructions.Data.Database.Firebase
 
         public DataContext(string dbPath)
         {
-            firebase = new FirebaseClient(dbPath);
+            var options = new FirebaseOptions();
+           options.SyncPeriod = new System.TimeSpan(1, 0, 0, 1);
+            options.OfflineDatabaseFactory= (t, s) => new Offlinedatabase.OfflineDatabase(t, s);
+
+
+            firebase = new FirebaseClient(dbPath,options);
             SetDatabaseOnObjects();
         }
         private void SetDatabaseOnObjects()
