@@ -15,17 +15,21 @@ namespace Safety_Instructions.Data.Database.Sqlite
         }
         public override Task<List<Instruction>> FindAsync(Expression<Func<Instruction, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return _database.Table<Instruction>()
+                       .Where(predicate)
+                       .ToListAsync();
         }
 
         public override Task<List<Instruction>> GetAsync()
         {
-            throw new NotImplementedException();
+            return _database.Table<Instruction>().ToListAsync();
         }
 
         public override Task<Instruction> GetSelectedAsync(Expression<Func<Instruction, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return _database.Table<Instruction>().FirstOrDefaultAsync();
         }
+
+ 
     }
 }
