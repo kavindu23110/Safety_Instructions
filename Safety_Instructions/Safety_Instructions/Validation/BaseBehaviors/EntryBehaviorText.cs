@@ -38,7 +38,7 @@ namespace Safety_Instructions.Validation.BaseBehaviors
         {
             get { return (string)GetValue(DisableButton); }
             set { SetValue(DisableButton, value); }
-        }     
+        }
         public string ToolbarItemName
         {
             get { return (string)GetValue(Toolbar); }
@@ -70,7 +70,7 @@ namespace Safety_Instructions.Validation.BaseBehaviors
             ToolbarItem toolbar = ((CEntry)sender).FindByName<ToolbarItem>(ToolbarItemName);
             if (!isValid)
             {
-                
+
                 ((CEntry)sender).IsBorderErrorVisible = true;
                 if (Placeholder)
                 {
@@ -96,13 +96,13 @@ namespace Safety_Instructions.Validation.BaseBehaviors
 
 
                 if (toolbar != null)
-                    toolbar.IsEnabled = false ;
+                    toolbar.IsEnabled = false;
             }
             else
             {
                 ((CEntry)sender).IsBorderErrorVisible = false;
                 if (Buttons != null)
-                    Buttons.IsEnabled =true;
+                    Buttons.IsEnabled = true;
                 if (Placeholder)
                 {
                     control.Placeholder = _placeHolder;
@@ -117,8 +117,8 @@ namespace Safety_Instructions.Validation.BaseBehaviors
                     }
                 }
                 if (toolbar != null)
-                     toolbar.IsEnabled = true;
-              
+                    toolbar.IsEnabled = true;
+
             }
         }
 

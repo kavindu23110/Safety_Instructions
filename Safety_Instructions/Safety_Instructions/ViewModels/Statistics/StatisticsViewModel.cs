@@ -3,7 +3,6 @@ using Safety_Instructions.Data.APIConnections;
 using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using Safety_Instructions.Helpers;
-using System;
 using Xamarin.Essentials;
 
 namespace Safety_Instructions.ViewModels.Statistics
@@ -13,7 +12,7 @@ namespace Safety_Instructions.ViewModels.Statistics
         public CoronaApiResult CoronaApiResult { get; set; }
         public StatisticsViewModel()
         {
-          
+
         }
 
         public async System.Threading.Tasks.Task loadresultAsync()

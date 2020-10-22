@@ -1,6 +1,5 @@
 ﻿using Plugin.Media;
 using Safety_app.Helpers;
-using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -41,8 +40,8 @@ namespace Safety_Instructions.ViewModels.Profile
 
             if (file == null)
                 return;
-         
-            profile = new Data.Models.Profile() { ImagePath = file.AlbumPath ,Name=profile.Name};
+
+            profile = new Data.Models.Profile() { ImagePath = file.AlbumPath, Name = profile.Name };
 
 
         }
