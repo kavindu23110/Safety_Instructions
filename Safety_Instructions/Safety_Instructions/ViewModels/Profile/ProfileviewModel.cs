@@ -1,5 +1,6 @@
 ﻿using Plugin.Media;
 using Safety_app.Helpers;
+using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -7,7 +8,7 @@ namespace Safety_Instructions.ViewModels.Profile
 {
     public class ProfileviewModel : BaseViewModel
     {
-        public Safety_Instructions.Data.Models.Profile profile { get; set; }
+
         public ICommand TakeImageCommand { get; set; }
         public ICommand NextCommand { get; set; }
         public ProfileviewModel()
@@ -40,8 +41,8 @@ namespace Safety_Instructions.ViewModels.Profile
 
             if (file == null)
                 return;
-            profile.ImagePath = file.Path;
-
+         
+            profile = new Data.Models.Profile() { ImagePath = file.AlbumPath ,Name=profile.Name};
 
 
         }

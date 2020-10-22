@@ -25,7 +25,7 @@ namespace Safety_Instructions.ViewModels.Statistics
                 coronaApi = await restservice.MakeGetRequest();
                 if (coronaApi == null)
                 {
-                    StaticFunctions.DisplayAlert_ProvideInformationAsync("Information", "Provblem in fetching Real time data");
+                    StaticFunctions.DisplayAlert_ProvideInformationAsync("Information", "Issue in fetching Real time data.");
                     coronaApi = await new Data.APIConnections.FileHandler().ReadAPIResultAsync();
                 }
             }
@@ -34,10 +34,7 @@ namespace Safety_Instructions.ViewModels.Statistics
                 StaticFunctions.DisplayAlert_ProvideInformationAsync("Information", "No Active Internet Connection Detected.");
                 coronaApi = await new Data.APIConnections.FileHandler().ReadAPIResultAsync();
             }
-        
- 
-          
-       
+
             CoronaApiResult = coronaApi;
         }
 

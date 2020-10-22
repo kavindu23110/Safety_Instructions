@@ -11,7 +11,7 @@ namespace Safety_Instructions.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
 
-
+        public Data.Models.Profile profile { get; set; }
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
