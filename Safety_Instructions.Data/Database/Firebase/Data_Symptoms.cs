@@ -44,9 +44,7 @@ namespace Safety_Instructions.Data.Database.Firebase
         {
             try
             {
-                await firebase
-.Child(EntityName)
-.PostAsync(Entity, true);
+                await firebase.Child(EntityName).PostAsync(Entity, true);
             }
             catch (Exception ex)
             {
