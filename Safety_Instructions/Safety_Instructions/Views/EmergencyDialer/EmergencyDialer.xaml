@@ -29,12 +29,11 @@
 
             </Frame>
 
-            <Button Command="{Binding CallCommand}" 
+            <ImageButton Command="{Binding CallCommand}" 
+                  Source="call.png"
                     HorizontalOptions="Center" 
                     Margin="10" 
-                    VerticalOptions="Center" 
-                    FontSize="Title"
-                    Text="Emergency Call 1999"></Button>
+                    VerticalOptions="Center" ></ImageButton>
             
         </StackLayout>
 

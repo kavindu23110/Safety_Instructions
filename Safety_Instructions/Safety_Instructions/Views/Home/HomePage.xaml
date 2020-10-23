@@ -31,7 +31,7 @@
             </Frame>
         
                     <Button Text="How To Protect" VerticalOptions="CenterAndExpand"  Command="{Binding InstructionsLandingCommand}" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Know Syntoms" VerticalOptions="CenterAndExpand"  Command="{Binding SyntomsLandingCommand}" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Know Synonyms" VerticalOptions="CenterAndExpand"  Command="{Binding SyntomsLandingCommand}" HorizontalOptions="CenterAndExpand"></Button>
                     <Button Text="Statistics" VerticalOptions="CenterAndExpand"  Command="{Binding StatisticsCommand}" HorizontalOptions="CenterAndExpand"></Button>
                     <Button Text="Emergency Dialer" VerticalOptions="CenterAndExpand" Command="{Binding EmergencyDialCommand}" HorizontalOptions="CenterAndExpand"></Button>
                   
