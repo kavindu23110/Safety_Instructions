@@ -47,7 +47,7 @@ namespace Safety_Instructions.Data.Database.Offlinedatabase
 
 
         public ICollection<OfflineEntry> Values => this.cache.Values;
- 
+
         public OfflineEntry this[string key]
         {
             get
@@ -81,8 +81,8 @@ namespace Safety_Instructions.Data.Database.Offlinedatabase
         public void Clear()
         {
             this.cache.Clear();
- 
-    
+
+
         }
 
 
@@ -121,7 +121,7 @@ namespace Safety_Instructions.Data.Database.Offlinedatabase
             return this.db.Delete<OfflineEntry>(key);
         }
 
- 
+
 
         public bool TryGetValue(string key, out OfflineEntry value)
         {

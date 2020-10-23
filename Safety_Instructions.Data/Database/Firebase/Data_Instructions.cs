@@ -21,7 +21,7 @@ namespace Safety_Instructions.Data.Database.Firebase
         {
             EntityName = nameof(Instruction);
             this.firebase = firebase.Child(EntityName).AsRealtimeDatabase<Instruction>("", "", StreamingOptions.LatestOnly, InitialPullStrategy.MissingOnly, true);
-             syncdatabaseAsync();
+            _ = syncdatabaseAsync();
         }
 
         private async Task syncdatabaseAsync()
@@ -29,10 +29,6 @@ namespace Safety_Instructions.Data.Database.Firebase
             await this.firebase.PullAsync();
         }
 
-        public Task Delete(Instruction Entity)
-        {
-            throw new NotImplementedException();
-        }
 
         public Instruction Findasync(Func<Instruction, bool> predicate)
         {

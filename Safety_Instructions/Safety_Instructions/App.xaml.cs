@@ -1,10 +1,6 @@
-﻿using Safety_Instructions.Data;
-using Safety_Instructions.Data.Database;
+﻿using Safety_Instructions.Data.Database;
 using Safety_Instructions.Data.Interfaces;
-using Safety_Instructions.Data.Models;
 using Safety_Instructions.Views.Profile;
-using System;
-using System.IO;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 

@@ -7,6 +7,6 @@ namespace Safety_Instructions.Data.Interfaces
     public interface IRestservices
     {
         HttpClient _client { get; set; }
-        Task<CoronaApiResult> MakeGetRequest(string resource= null);
+        Task<CoronaApiResult> MakeGetRequest(string resource = null);
     }
 }

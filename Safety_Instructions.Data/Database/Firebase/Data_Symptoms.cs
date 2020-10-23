@@ -21,7 +21,7 @@ namespace Safety_Instructions.Data.Database.Firebase
 
             EntityName = nameof(Symptoms);
             this.firebase = firebase.Child(EntityName).AsRealtimeDatabase<Symptoms>("", "", StreamingOptions.LatestOnly, InitialPullStrategy.MissingOnly, true);
-            syncdatabaseAsync();
+            _ = syncdatabaseAsync();
         }
 
         private async Task syncdatabaseAsync()
@@ -39,7 +39,7 @@ namespace Safety_Instructions.Data.Database.Firebase
         {
             try
             {
-                firebase.Post<Symptoms>(Entity); 
+                firebase.Post<Symptoms>(Entity);
             }
             catch (Exception ex)
             {

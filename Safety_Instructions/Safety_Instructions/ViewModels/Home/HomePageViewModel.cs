@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Safety_Instructions.ViewModels.Home
@@ -13,14 +12,14 @@ namespace Safety_Instructions.ViewModels.Home
 
 
 
- 
+
         public HomePageViewModel()
         {
             InstructionsLandingCommand = new Command(OnInstructionsLanding);
             SyntomsLandingCommand = new Command(OnSyntomsLanding);
             StatisticsCommand = new Command(OnStatistics);
             EmergencyDialCommand = new Command(OnEmergencyDial);
-      
+
         }
 
         private async void OnStatistics(object obj)

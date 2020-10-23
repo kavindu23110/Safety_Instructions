@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Safety_Instructions.ViewModels.Instructions
 {
