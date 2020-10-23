@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +11,17 @@ namespace Safety_Instructions.Views.Statistics
         {
             InitializeComponent();
             BindingContext = new ViewModels.Statistics.StatisticsViewModel();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            load();
+        }
+
+        private async void load()
+        {
+            await (this.BindingContext as ViewModels.Statistics.StatisticsViewModel).loadresultAsync();
         }
     }
 }

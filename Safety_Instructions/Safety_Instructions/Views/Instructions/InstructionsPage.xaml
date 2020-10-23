@@ -3,21 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="Safety_Instructions.Views.Instructions.InstructionsPage"
-                       BackgroundColor="LightGray">
+                       BackgroundColor="LightGray"
+             Shell.NavBarIsVisible="True">
 
     <ContentPage.Content>
-        <StackLayout Margin="10">
-            
+        <StackLayout Margin="10" >
 
 
-            <CarouselView ItemsSource="{Binding    lstInstructions}" >
-              
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout>
-                            
-                <Frame HasShadow="True"
-                       BorderColor="DarkGray"
+
+      
+                <CarouselView ItemsSource="{Binding    lstInstructions}"    >
+
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+
+                                <Frame HasShadow="True"
+                          BorderColor="#596464"
                        x:Name="InstructionFrame"
                        CornerRadius="10"
                        Margin="20"
@@ -25,15 +27,25 @@
                        WidthRequest="400"
                        HorizontalOptions="Center"
                        VerticalOptions="CenterAndExpand">
-                                
-                                <StackLayout>
-                                    <Label Text="{Binding Title,Mode=TwoWay}" 
+
+                                    <StackLayout>
+                                        <Frame BackgroundColor="#E6898E92" HorizontalOptions="FillAndExpand" CornerRadius="10" >
+                                            <StackLayout>
+                                                <Label Text="{Binding Title,Mode=TwoWay}"
+                                               TextColor="White"
                                            HorizontalOptions="Center"
+                                           VerticalOptions="FillAndExpand"
                                            FontSize="Title"></Label>
-                                    <Label Margin="0,10,0,10" Text="{Binding Description,Mode=TwoWay}" 
+
+                                                <Label Margin="0,10,0,10" 
+                                                     TextColor="White"
+                                           Text="{Binding Description,Mode=TwoWay}" 
                                            HorizontalOptions="Center"
                                            FontSize="Subtitle"></Label>
-                                    <forms:AnimationView               
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <forms:AnimationView               
                                             x:Name="animationView"
                                             Animation="{Binding AnimationJson ,Mode=TwoWay}"
                                             WidthRequest="{Binding  WidthRequest, Source={x:Reference Name=InstructionFrame}}"                     
@@ -41,15 +53,16 @@
                                             AutoPlay="True"
                                             VerticalOptions="FillAndExpand"
                                             HorizontalOptions="FillAndExpand" />
-                                </StackLayout>
-                                
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                                    </StackLayout>
+
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
 
 
+   
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,32 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
               xmlns:controls="clr-namespace:Safety_Instructions.Views.ContentViews"
               x:Class="Safety_Instructions.Views.Statistics.StatisticsPage"
-      >
-    <ContentPage>
+      Title="Statistics">
+    <ContentPage >
         <ContentPage.Content>
-            <StackLayout Margin="10">
-                <Label FontSize="Title" HorizontalOptions="CenterAndExpand">Local Statistics</Label>
-                <Label FontSize="Subtitle" HorizontalOptions="CenterAndExpand" Text="{Binding CoronaApiResult.Data.UpdateDateTime}"></Label>
-                <controls:StatisticsContentPage Title= "Total cases" Count="{Binding CoronaApiResult.Data.LocalTotalCases }" IconImageSource="active.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "Active cases" Count="{Binding CoronaApiResult.Data.LocalActiveCases }" IconImageSource="patient.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "New cases" Count="{Binding CoronaApiResult.Data.LocalNewCases}" IconImageSource="newcases.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "Recovered cases" Count="{Binding CoronaApiResult.Data.LocalRecovered}" IconImageSource="recovered.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "New Deaths" Count="{Binding CoronaApiResult.Data.LocalNewDeaths}" IconImageSource="rip.png"></controls:StatisticsContentPage>
-            </StackLayout>
+            <Frame BackgroundColor="LightGray">
+                <StackLayout Margin="10">
+                    <Label FontSize="Title" HorizontalOptions="CenterAndExpand">Local Statistics</Label>
+                    <Label FontSize="Subtitle" HorizontalOptions="CenterAndExpand" Text="{Binding CoronaApiResult.Data.UpdateDateTime}"></Label>
+                    <controls:StatisticsContentPage Title= "Total cases" Count="{Binding CoronaApiResult.Data.LocalTotalCases }" IconImageSource="active.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "Active cases" Count="{Binding CoronaApiResult.Data.LocalActiveCases }" IconImageSource="patient.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "New cases" Count="{Binding CoronaApiResult.Data.LocalNewCases}" IconImageSource="newcases.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "Recovered cases" Count="{Binding CoronaApiResult.Data.LocalRecovered}" IconImageSource="recovered.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "New Deaths" Count="{Binding CoronaApiResult.Data.LocalNewDeaths}" IconImageSource="rip.png"></controls:StatisticsContentPage>
+                </StackLayout>
+            </Frame>
         </ContentPage.Content>
     </ContentPage>
 
     <ContentPage>
         <ContentPage.Content>
-            <StackLayout Margin="10">
-                <Label FontSize="Title" HorizontalOptions="CenterAndExpand">Global Statistics</Label>
-                <Label FontSize="Subtitle" HorizontalOptions="CenterAndExpand" Text="{Binding CoronaApiResult.Data.UpdateDateTime}"></Label>
-                <controls:StatisticsContentPage Title= "Total cases" Count="{Binding CoronaApiResult.Data.GlobalTotalCases }" IconImageSource="active.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "New cases" Count="{Binding CoronaApiResult.Data.GlobalNewCases}" IconImageSource="newcases.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "Recovered cases" Count="{Binding CoronaApiResult.Data.GlobalRecovered}" IconImageSource="recovered.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "Deaths" Count="{Binding CoronaApiResult.Data.GlobalNewDeaths }" IconImageSource="rip.png"></controls:StatisticsContentPage>
-                <controls:StatisticsContentPage Title= "New Deaths" Count="{Binding CoronaApiResult.Data.GlobalDeaths}" IconImageSource="rip.png"></controls:StatisticsContentPage>
-            </StackLayout>
+            <Frame BackgroundColor="LightGray">
+                <StackLayout Margin="10">
+                    <Label FontSize="Title" HorizontalOptions="CenterAndExpand" >Global Statistics</Label>
+                    <Label FontSize="Subtitle" HorizontalOptions="CenterAndExpand" Text="{Binding CoronaApiResult.Data.UpdateDateTime}"></Label>
+                    <controls:StatisticsContentPage Title= "Total cases" Count="{Binding CoronaApiResult.Data.GlobalTotalCases }" IconImageSource="active.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "New cases" Count="{Binding CoronaApiResult.Data.GlobalNewCases}" IconImageSource="newcases.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "Recovered cases" Count="{Binding CoronaApiResult.Data.GlobalRecovered}" IconImageSource="recovered.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "Deaths" Count="{Binding CoronaApiResult.Data.GlobalNewDeaths }" IconImageSource="rip.png"></controls:StatisticsContentPage>
+                    <controls:StatisticsContentPage Title= "New Deaths" Count="{Binding CoronaApiResult.Data.GlobalDeaths}" IconImageSource="rip.png"></controls:StatisticsContentPage>
+                </StackLayout>
+            </Frame>
         </ContentPage.Content>
     </ContentPage>
 

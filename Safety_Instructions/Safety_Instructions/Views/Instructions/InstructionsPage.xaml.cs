@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,13 +18,15 @@ namespace Safety_Instructions.Views.Instructions
 
             //TextAsync();
         }
-
-        private async Task TextAsync()
+        protected override void OnAppearing()
         {
-            var x = await App.Database.GetData_Instructions().GetAsync();
-            //MyProperty = x.FirstOrDefault().AnimationJson;
-            // MyProperty = x.FirstOrDefault().AnimationJson.Replace("\\", "");
+            base.OnAppearing();
+            load();
+        }
 
+        private async void load()
+        {
+            (this.BindingContext as ViewModels.Instructions.InstructionsViewModel).loadresult();
         }
     }
 }

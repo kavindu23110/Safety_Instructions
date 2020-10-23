@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customization="clr-namespace:Safety_Instructions.CustomRender" xmlns:behavior="clr-namespace:Safety_Instructions.Validation.Behaviors"
+             x:Class="Safety_Instructions.Views.Profile.ProfilePage"
+             Title="Profile"
+              BackgroundColor="GhostWhite">
+    <ContentPage.Content>
+        <StackLayout Padding="40">
+            <Label Text="Hi! Let's go"
+                   FontSize="Title"
+                   HorizontalOptions="CenterAndExpand"
+                   Padding="10"></Label>
+            <Frame CornerRadius="150" 
+           HeightRequest="300"
+           WidthRequest="300"
+           HorizontalOptions="Center"
+           Padding="0"
+           IsClippedToBounds="True">
+
+                <ImageButton Source="{Binding profile.ImagePath }" 
+                       WidthRequest="300"
+                           HeightRequest="300"
+                            BackgroundColor="LightGray"
+           HorizontalOptions="FillAndExpand"
+                     Command="{Binding TakeImageCommand}"
+           VerticalOptions="FillAndExpand"/>
+                
+            </Frame>
+ 
+
+            <customization:CEntry x:Name="name" 
+                                  Margin="10"
+                                 
+                                           BackgroundColor="LightGray"
+                                  Placeholder="Please Enter name"
+                                  Text="{Binding Path=prescription.Name,Mode=TwoWay}" >
+                <customization:CEntry.Behaviors>
+                    <behavior:NullValidationbehavior  Message="Name is Required"
+                                                      ButtonName="Next"
+                                                      Placeholder="True"></behavior:NullValidationbehavior>
+                </customization:CEntry.Behaviors>
+            </customization:CEntry>
+
+            <Button Margin="0,10,0,0" x:Name="Next" Command="{Binding NextCommand}" CornerRadius="10" Text="Next"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

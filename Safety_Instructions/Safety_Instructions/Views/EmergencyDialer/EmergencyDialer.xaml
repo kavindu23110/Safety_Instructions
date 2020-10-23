@@ -1,14 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-             x:Class="Safety_Instructions.Views.EmergencyDialer.EmergencyDialer">
+             x:Class="Safety_Instructions.Views.EmergencyDialer.EmergencyDialer"
+             Title="Emergency Call">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Emergency Dialer"
-                VerticalOptions="StartAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame Margin="10" BackgroundColor="LightGray">
+                <StackLayout>
+                    <Label 
+                    Text="Emergency Service" 
+                        VerticalOptions="StartAndExpand"
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="Title"></Label>
+                  
+                </StackLayout>
 
-            <Button Command="{Binding CallCommand}" Text="EmergencyCall"></Button>
+            </Frame>
+
+            <Frame Margin="10,5,10,5" BackgroundColor="LightGray">
+                <StackLayout>
+                    <Label 
+                    Text="Connect You with Covid emergency Center" 
+                        VerticalOptions="StartAndExpand"
+                    HorizontalOptions="CenterAndExpand" 
+                    FontSize="Subtitle"></Label>
+
+                </StackLayout>
+
+            </Frame>
+
+            <ImageButton Command="{Binding CallCommand}" 
+                  Source="call.png"
+                    HorizontalOptions="Center" 
+                    Margin="10" 
+                    VerticalOptions="Center" ></ImageButton>
             
         </StackLayout>
 

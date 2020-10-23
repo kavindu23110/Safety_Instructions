@@ -2,34 +2,31 @@
 using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using System;
-using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Safety_Instructions.Data.APIConnections
 {
-   public class RestAPI: IRestservices
+    public class RestAPI : IRestservices
     {
         public HttpClient _client { get; set; }
         public RestAPI(String URI)
         {
             _client = new HttpClient();
-            _client.BaseAddress=new Uri(URI);
+            _client.BaseAddress = new Uri(URI);
         }
 
-    
 
-        public async Task<CoronaApiResult> MakeGetRequest(string resource=null) 
+
+        public async Task<CoronaApiResult> MakeGetRequest(string resource = null)
         {
             try
             {
                 Uri uri;
 
-                if (resource!=null)
+                if (resource != null)
                 {
-                    uri= new Uri(_client.BaseAddress,resource);
+                    uri = new Uri(_client.BaseAddress, resource);
                 }
                 else
                 {
@@ -37,10 +34,11 @@ namespace Safety_Instructions.Data.APIConnections
                 }
                 var request = new HttpRequestMessage()
                 {
+
                     RequestUri = uri,
                     Method = HttpMethod.Get,
                 };
-    
+
                 using (var response = await _client.SendAsync(request))
                 {
                     response.EnsureSuccessStatusCode();
@@ -51,7 +49,7 @@ namespace Safety_Instructions.Data.APIConnections
                 }
 
 
-   
+
             }
             catch (Exception e)
             {

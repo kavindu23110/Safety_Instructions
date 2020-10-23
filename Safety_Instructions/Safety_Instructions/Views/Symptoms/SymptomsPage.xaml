@@ -6,15 +6,17 @@
               BackgroundColor="LightGray">
 
     <ContentPage.Content>
+    
         <StackLayout Margin="10">
-            <CarouselView ItemsSource="{Binding lstSymptoms}" >
+
+            <CarouselView ItemsSource="{Binding lstSymptoms,Mode=TwoWay}"  >
 
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
 
                             <Frame HasShadow="True"
-                       BorderColor="DarkGray"
+                       BorderColor="#808A92"
                        x:Name="InstructionFrame"
                        CornerRadius="10"
                        Margin="20"
@@ -24,16 +26,25 @@
                        VerticalOptions="CenterAndExpand">
 
                                 <StackLayout>
-                                    <Label Text="{Binding Title,Mode=TwoWay}" 
+                                    <Frame BackgroundColor="#E6898E92" HorizontalOptions="FillAndExpand" CornerRadius="10" >
+                                        <StackLayout>
+                                            <Label Text="{Binding Title,Mode=TwoWay}"
+                                               TextColor="White"
                                            HorizontalOptions="Center"
+                                           VerticalOptions="FillAndExpand"
                                            FontSize="Title"></Label>
-                                    <Label Margin="0,10,0,10" Text="{Binding Description,Mode=TwoWay}" 
+
+                                            <Label Margin="0,10,0,10" 
+                                                     TextColor="White"
+                                           Text="{Binding Description,Mode=TwoWay}" 
                                            HorizontalOptions="Center"
                                            FontSize="Subtitle"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                         
                                     <forms:AnimationView               
                                             x:Name="animationView"
-                                            Animation="{Binding AnimationJson ,Mode=TwoWay}"
-                                            WidthRequest="{Binding  WidthRequest, Source={x:Reference Name=InstructionFrame}}"                     
+                                            Animation="{Binding AnimationJson ,Mode=TwoWay}"            
                                             HeightRequest="300"    
                                             AutoPlay="True"
                                             VerticalOptions="FillAndExpand"

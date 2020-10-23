@@ -19,7 +19,7 @@ namespace Safety_Instructions.ViewModels.EmergencyDialer
 
             try
             {
-                PhoneDialer.Open("1990");
+                PhoneDialer.Open("1999");
             }
             catch (Exception Ex)
             {

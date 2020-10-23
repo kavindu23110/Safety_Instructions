@@ -2,18 +2,21 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:converters="clr-namespace:Safety_Instructions.Converter"
              mc:Ignorable="d"
              x:Name="this"
              x:Class="Safety_Instructions.Views.ContentViews.StatisticsContentPage"
            >
     <ContentView.Content>
 
-        <Frame WidthRequest="50" Margin="10,5,10,5">
+        <Frame WidthRequest="50"
+               CornerRadius="10"
+               Margin="8,4,8,4" 
+               BackgroundColor="White">
             <Grid>
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="25"  ></RowDefinition>
-                    <RowDefinition Height="25"  ></RowDefinition>
+                    <RowDefinition Height="22"  ></RowDefinition>
+                    <RowDefinition Height="22"  ></RowDefinition>
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -24,7 +27,7 @@
                 </Grid.ColumnDefinitions>
                 <Image Source="{Binding IconImageSource ,Source={x:Reference this}}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></Image>
                 <Label Text= "{Binding Title,Source={x:Reference this}}" HorizontalOptions="CenterAndExpand" FontSize="Large" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"></Label>
-                <Label Text= "{Binding Count,Source={x:Reference this}}" FontSize="Large" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Label>
+                <Label Text= "{Binding Count,Source={x:Reference this},Converter={converters:NumberRoundConverter}}" FontSize="Large" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"></Label>
             </Grid>
         </Frame>
 

@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Safety_Instructions.ViewModels.Instructions
 {
-  public  class InstructionsViewModel:BaseViewModel
+    public class InstructionsViewModel : BaseViewModel
     {
         public ObservableCollection<Data.Models.Instruction> lstInstructions { get; set; }
-        public InstructionsViewModel()
-        {
-            LoadInstructionsAsync();
-        }
 
-        private async System.Threading.Tasks.Task LoadInstructionsAsync()
+        internal void loadresult()
         {
-            var ins =await App.Database.GetData_Instructions().GetAsync();
-            lstInstructions = new ObservableCollection<Data.Models.Instruction>(ins);
+            var ins = App.Database.GetData_Instructions().GetAsync();
+            lstInstructions = new ObservableCollection<Data.Models.Instruction>(ins.OrderBy(p => p.Id));
         }
     }
 }

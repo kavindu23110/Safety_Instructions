@@ -1,28 +1,51 @@
-﻿using Safety_Instructions.Data.APIConnections;
+﻿using Safety_app.Helpers;
+using Safety_Instructions.Data.APIConnections;
+using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using Safety_Instructions.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Xamarin.Essentials;
 
 namespace Safety_Instructions.ViewModels.Statistics
 {
- public   class StatisticsViewModel:BaseViewModel
+    public class StatisticsViewModel : BaseViewModel
     {
         public CoronaApiResult CoronaApiResult { get; set; }
         public StatisticsViewModel()
         {
-            loadresultAsync();
+
         }
 
-        private async System.Threading.Tasks.Task loadresultAsync()
+        public async System.Threading.Tasks.Task loadresultAsync()
         {
-         var data=   await new RestAPI(CommonValues.healhAPI).MakeGetRequest();
-            if (data ==null)
+            CoronaApiResult coronaApi;
+            if (CheckForInternet())
             {
-               data= await new Data.APIConnections.FileHandler().ReadAPIResultAsync();
+                IRestservices restservice = new RestAPI(CommonValues.healhAPI);
+                coronaApi = await restservice.MakeGetRequest();
+                if (coronaApi == null)
+                {
+                    StaticFunctions.DisplayAlert_ProvideInformationAsync("Information", "Issue in fetching Real time data.");
+                    coronaApi = await new Data.APIConnections.FileHandler().ReadAPIResultAsync();
+                }
             }
-           CoronaApiResult= data;
+            else
+            {
+                StaticFunctions.DisplayAlert_ProvideInformationAsync("Information", "No Active Internet Connection Detected.");
+                coronaApi = await new Data.APIConnections.FileHandler().ReadAPIResultAsync();
+            }
+
+            CoronaApiResult = coronaApi;
+        }
+
+        private bool CheckForInternet()
+        {
+            var current = Connectivity.NetworkAccess;
+
+            if (current == NetworkAccess.Internet)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
