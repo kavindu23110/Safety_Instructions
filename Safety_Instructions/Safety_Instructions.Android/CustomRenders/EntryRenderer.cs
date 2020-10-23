@@ -4,7 +4,9 @@ using Safety_Instructions.Droid.CustomRenders;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+#pragma warning disable CS0612 // Type or member is obsolete
 [assembly: ExportRenderer(typeof(CEntry), typeof(CustomEntryRenderer))]
+#pragma warning restore CS0612 // Type or member is obsolete
 namespace Safety_Instructions.Droid.CustomRenders
 {
     [Obsolete]

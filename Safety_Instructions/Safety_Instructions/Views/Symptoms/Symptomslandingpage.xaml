@@ -21,7 +21,7 @@
                          HorizontalOptions="CenterAndExpand"
                         Margin="5"
                         FontSize="Medium"
-                        Text="If you Feel You have these symptoms.please contact the Public health care Officer.Or use Emergency Dial to Contact Covid emergency center "></Label>
+                        Text="Monitor your symptomscarefully. If your symptoms get worse, call your healthcare provider immediately. "></Label>
 
             </Frame>
 

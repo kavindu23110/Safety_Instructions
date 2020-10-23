@@ -17,7 +17,6 @@ namespace Safety_Instructions
             Routing.RegisterRoute(nameof(StatisticsPage), typeof(StatisticsPage));
         }
 
-
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//LoginPage");

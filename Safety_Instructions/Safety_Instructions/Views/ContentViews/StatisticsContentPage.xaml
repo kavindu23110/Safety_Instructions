@@ -9,11 +9,14 @@
            >
     <ContentView.Content>
 
-        <Frame WidthRequest="50" Margin="10,5,10,5" BackgroundColor="White">
+        <Frame WidthRequest="50"
+               CornerRadius="10"
+               Margin="8,4,8,4" 
+               BackgroundColor="White">
             <Grid>
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="25"  ></RowDefinition>
-                    <RowDefinition Height="25"  ></RowDefinition>
+                    <RowDefinition Height="22"  ></RowDefinition>
+                    <RowDefinition Height="22"  ></RowDefinition>
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>

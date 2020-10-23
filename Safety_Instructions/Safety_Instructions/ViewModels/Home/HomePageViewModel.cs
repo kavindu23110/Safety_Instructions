@@ -10,22 +10,17 @@ namespace Safety_Instructions.ViewModels.Home
         public ICommand SyntomsLandingCommand { get; set; }
         public ICommand StatisticsCommand { get; set; }
         public ICommand EmergencyDialCommand { get; set; }
-        public ICommand linksCommand { get; set; }
 
 
-        public ObservableCollection<Models.Navigations> lstNavigation { get; set; }
+
+ 
         public HomePageViewModel()
         {
-
             InstructionsLandingCommand = new Command(OnInstructionsLanding);
             SyntomsLandingCommand = new Command(OnSyntomsLanding);
             StatisticsCommand = new Command(OnStatistics);
             EmergencyDialCommand = new Command(OnEmergencyDial);
-            linksCommand = new Command(Onlinks);
-
-
-
-
+      
         }
 
         private async void OnStatistics(object obj)
@@ -38,10 +33,6 @@ namespace Safety_Instructions.ViewModels.Home
             await Shell.Current.GoToAsync(nameof(Views.EmergencyDialer.EmergencyDialer));
         }
 
-        private async void Onlinks(object obj)
-        {
-            // await Shell.Current.Navigation.PushAsync(new EmergencyDialer());
-        }
 
         private async void OnSyntomsLanding(object obj)
         {

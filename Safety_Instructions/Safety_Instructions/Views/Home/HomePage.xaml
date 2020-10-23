@@ -4,14 +4,16 @@
              xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="Safety_Instructions.Views.Home.HomePage"
              BackgroundImageSource="t.jpg"
+             Title="Home"
             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
                 <Setter Property="WidthRequest" Value="300"></Setter>
-                <Setter Property="Padding" Value="0,10,0,10"></Setter>
+                <Setter Property="Padding" Value="10,10,10,10"></Setter>
                 <Setter Property="Margin" Value="0,0,0,5"></Setter>
                 <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="CornerRadius" Value="10"></Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

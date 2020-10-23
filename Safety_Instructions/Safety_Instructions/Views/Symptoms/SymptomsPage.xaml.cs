@@ -12,5 +12,16 @@ namespace Safety_Instructions.Views.Symptoms
             InitializeComponent();
             BindingContext = new ViewModels.Symptoms.SymptomsViewModel();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            load();
+        }
+
+        private async void load()
+        {
+            await (this.BindingContext as ViewModels.Symptoms.SymptomsViewModel).loadresultAsync();
+        }
     }
 }

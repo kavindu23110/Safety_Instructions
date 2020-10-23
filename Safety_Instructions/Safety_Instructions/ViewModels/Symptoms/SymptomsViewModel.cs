@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Safety_Instructions.ViewModels.Symptoms
 {
@@ -6,18 +9,14 @@ namespace Safety_Instructions.ViewModels.Symptoms
     {
 
         public ObservableCollection<Data.Models.Symptoms> lstSymptoms { get; set; }
-        public SymptomsViewModel()
-        {
-
-            LoadInstructionsAsync();
-
-        }
+  
 
 
-        private async System.Threading.Tasks.Task LoadInstructionsAsync()
+
+        internal async Task loadresultAsync()
         {
             var ins = await App.Database.GetData_Symptoms().GetAsync();
-            lstSymptoms = new ObservableCollection<Data.Models.Symptoms>(ins);
+            lstSymptoms = new ObservableCollection<Data.Models.Symptoms>(ins.OrderBy(p=>p.Id));
         }
     }
 }

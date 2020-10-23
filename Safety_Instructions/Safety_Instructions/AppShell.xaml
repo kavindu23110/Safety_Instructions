@@ -4,10 +4,13 @@
        xmlns:home="clr-namespace:Safety_Instructions.Views.Home"
        xmlns:instructions="clr-namespace:Safety_Instructions.Views.Instructions"
        xmlns:Symptoms="clr-namespace:Safety_Instructions.Views.Symptoms"
+       xmlns:statistics="clr-namespace:Safety_Instructions.Views.Statistics"
        xmlns:emergency="clr-namespace:Safety_Instructions.Views.EmergencyDialer"
        Title="Safety_Instructions"
       Shell.TabBarIsVisible="True"
-    
+    FlyoutBackgroundColor="#D9211E1E"
+
+       
        x:Class="Safety_Instructions.AppShell">
 
     <!--
@@ -23,10 +26,10 @@
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#950B0A0A" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Black"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
@@ -39,7 +42,7 @@
                 <Setter Property="TextColor" Value="White"></Setter>
             </Style>
             <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="LightBlue"></Setter>
+                <Setter Property="BackgroundColor" Value="#4B7D8D"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
@@ -88,8 +91,9 @@
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
   
             <ShellContent Title="Home" Icon="Home.png" Route="HomePage" ContentTemplate="{DataTemplate home:HomePage }" />
-        <ShellContent Title="Instructions" Icon="Home.png" Route="InstructionsLandingPage" ContentTemplate="{DataTemplate instructions:InstructionsLandingPage }" />
-        <ShellContent Title="Symptoms" Icon="Home.png" Route="Symptomslandingpage" ContentTemplate="{DataTemplate Symptoms:Symptomslandingpage}" />
+        <ShellContent Title="Instructions" Icon="instructions.png" Route="InstructionsLandingPage" ContentTemplate="{DataTemplate instructions:InstructionsLandingPage }" />
+        <ShellContent Title="Symptoms" Icon="symptoms.png" Route="Symptomslandingpage" ContentTemplate="{DataTemplate Symptoms:Symptomslandingpage}" />
+        <ShellContent Title="Statistics" IsTabStop="True" Icon="stats.jpg" Route="Symptomslandingpage" ContentTemplate="{DataTemplate statistics:StatisticsPage}" />
 
 
     </FlyoutItem>
