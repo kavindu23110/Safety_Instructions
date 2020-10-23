@@ -1,5 +1,6 @@
 ﻿using Plugin.Media;
 using Safety_app.Helpers;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -35,13 +36,14 @@ namespace Safety_Instructions.ViewModels.Profile
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 Directory = "Profilepic",
-                Name = "Profile.jpg"
+                Name = $"{Guid.NewGuid()}.jpg"
             });
 
             if (file == null)
                 return;
 
             profile = new Data.Models.Profile() { ImagePath = file.AlbumPath, Name = profile.Name };
+
 
 
         }
