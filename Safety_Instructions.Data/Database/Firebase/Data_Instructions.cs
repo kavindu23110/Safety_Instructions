@@ -1,7 +1,6 @@
 ﻿using Firebase.Database;
-using Firebase.Database.Query;
+using Firebase.Database.Offline;
 using Safety_app.Data.Interfaces;
-using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -12,62 +11,48 @@ namespace Safety_Instructions.Data.Database.Firebase
 {
     public class Data_Instructions : IDatabaseCommon<Instruction>
     {
-        public FirebaseClient firebase { get; set; }
+
+
         public string EntityName { get; set; }
+
+        private readonly RealtimeDatabase<Instruction> firebase;
 
         public Data_Instructions(FirebaseClient firebase)
         {
-            this.firebase = firebase;
             EntityName = nameof(Instruction);
+            this.firebase = firebase.Child(EntityName).AsRealtimeDatabase<Instruction>("", "", StreamingOptions.LatestOnly, InitialPullStrategy.MissingOnly, true);
+             syncdatabaseAsync();
         }
+
+        private async Task syncdatabaseAsync()
+        {
+            await this.firebase.PullAsync();
+        }
+
         public Task Delete(Instruction Entity)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Instruction> Findasync(Func<Instruction, bool> predicate)
+        public Instruction Findasync(Func<Instruction, bool> predicate)
         {
-            var allPersons = await GetAsync();
-            await firebase
-              .Child(EntityName)
-              .OnceAsync<Instruction>();
-            return allPersons.Where(predicate).FirstOrDefault();
+            return firebase.Once().Select(p => p.Object).ToList<Instruction>().Where(predicate).FirstOrDefault();
         }
 
-        public async Task<List<Instruction>> GetAsync()
+        public List<Instruction> GetAsync()
         {
-            return (await firebase
-            .Child(EntityName)
-            .OnceAsync<Instruction>()).Select(item => new Instruction
-            {
-                Description = item.Object.Description,
-                AnimationJson = item.Object.AnimationJson,
-                Id = item.Object.Id,
-                Title = item.Object.Title,
 
-            }).ToList();
+            return firebase.Once().Select(p => p.Object).ToList<Instruction>();
         }
 
-        public async Task Insert(Instruction Entity)
+        public void Insert(Instruction Entity)
         {
 
-            await firebase
-       .Child(EntityName)
-       .PostAsync(Entity, true);
+            firebase.Post<Instruction>(Entity);
 
 
         }
 
-        public async Task Update(Instruction Entity)
-        {
-            var toUpdate = (await firebase
-          .Child(EntityName)
-          .OnceAsync<Instruction>()).Where(a => a.Object.Id == Entity.Id).FirstOrDefault();
 
-            await firebase
-              .Child(EntityName)
-              .Child(toUpdate.Key)
-              .PutAsync(Entity);
-        }
     }
 }

@@ -9,14 +9,14 @@ namespace Safety_Instructions.ViewModels.Symptoms
     {
 
         public ObservableCollection<Data.Models.Symptoms> lstSymptoms { get; set; }
-  
 
 
 
-        internal async Task loadresultAsync()
+
+        internal void loadresult()
         {
-            var ins = await App.Database.GetData_Symptoms().GetAsync();
-            lstSymptoms = new ObservableCollection<Data.Models.Symptoms>(ins.OrderBy(p=>p.Id));
+            var ins = App.Database.GetData_Symptoms().GetAsync();
+            lstSymptoms = new ObservableCollection<Data.Models.Symptoms>(ins.OrderBy(p => p.Id));
         }
     }
 }

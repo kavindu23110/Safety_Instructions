@@ -27,7 +27,7 @@ namespace Safety_Instructions.Views.Instructions
 
         private async void load()
         {
-            await (this.BindingContext as ViewModels.Instructions.InstructionsViewModel).loadresultAsync();
+            (this.BindingContext as ViewModels.Instructions.InstructionsViewModel).loadresult();
         }
     }
 }

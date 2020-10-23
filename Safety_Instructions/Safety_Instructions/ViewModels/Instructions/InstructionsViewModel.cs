@@ -9,9 +9,9 @@ namespace Safety_Instructions.ViewModels.Instructions
     {
         public ObservableCollection<Data.Models.Instruction> lstInstructions { get; set; }
 
-        internal async Task loadresultAsync()
+        internal void loadresult()
         {
-            var ins = await App.Database.GetData_Instructions().GetAsync();
+            var ins = App.Database.GetData_Instructions().GetAsync();
             lstInstructions = new ObservableCollection<Data.Models.Instruction>(ins.OrderBy(p => p.Id));
         }
     }

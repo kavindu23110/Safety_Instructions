@@ -14,7 +14,7 @@ namespace Safety_Instructions.Data.Database.Firebase
         public DataContext(string dbPath)
         {
             var options = new FirebaseOptions();
-           options.SyncPeriod = new System.TimeSpan(1, 0, 0, 1);
+           options.SyncPeriod = new System.TimeSpan(0, 0, 1, 0);
             options.OfflineDatabaseFactory= (t, s) => new Offlinedatabase.OfflineDatabase(t, s);
 
 

@@ -1,7 +1,6 @@
 ﻿using Firebase.Database;
-using Firebase.Database.Query;
+using Firebase.Database.Offline;
 using Safety_app.Data.Interfaces;
-using Safety_Instructions.Data.Interfaces;
 using Safety_Instructions.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -12,39 +11,35 @@ namespace Safety_Instructions.Data.Database.Firebase
 {
     public class Data_Symptoms : IDatabaseCommon<Symptoms>
     {
-        public FirebaseClient firebase { get; set; }
+
         public string EntityName { get; set; }
+
+        private RealtimeDatabase<Symptoms> firebase;
 
         public Data_Symptoms(FirebaseClient firebase)
         {
-            this.firebase = firebase;
+
             EntityName = nameof(Symptoms);
+            this.firebase = firebase.Child(EntityName).AsRealtimeDatabase<Symptoms>("", "", StreamingOptions.LatestOnly, InitialPullStrategy.MissingOnly, true);
+            syncdatabaseAsync();
         }
 
-        public Task Delete(Symptoms Entity)
+        private async Task syncdatabaseAsync()
         {
-            throw new NotImplementedException();
+            await this.firebase.PullAsync();
         }
 
-        public async Task<List<Symptoms>> GetAsync()
+
+        public List<Symptoms> GetAsync()
         {
-            return (await firebase
-       .Child(EntityName)
-       .OnceAsync<Symptoms>()).Select(item => new Symptoms
-       {
-           Description = item.Object.Description,
-           AnimationJson = item.Object.AnimationJson,
-           Id = item.Object.Id,
-           Title = item.Object.Title,
-
-       }).ToList();
+            return firebase.Once().Select(p => p.Object).ToList<Symptoms>();
         }
 
-        public async Task Insert(Symptoms Entity)
+        public void Insert(Symptoms Entity)
         {
             try
             {
-                await firebase.Child(EntityName).PostAsync(Entity, true);
+                firebase.Post<Symptoms>(Entity); 
             }
             catch (Exception ex)
             {
@@ -53,21 +48,13 @@ namespace Safety_Instructions.Data.Database.Firebase
             }
         }
 
-        public async Task Update(Symptoms Entity)
-        {
-            var toUpdate = (await firebase
-       .Child(EntityName)
-       .OnceAsync<Symptoms>()).Where(a => a.Object.Id == Entity.Id).FirstOrDefault();
 
-            await firebase
-              .Child(EntityName)
-              .Child(toUpdate.Key)
-              .PutAsync(Entity);
+
+        public Symptoms Findasync(Func<Symptoms, bool> predicate)
+        {
+            return firebase.Once().Select(p => p.Object).ToList<Symptoms>().Where(predicate).FirstOrDefault();
         }
 
-        public Task<Symptoms> Findasync(Func<Symptoms, bool> predicate)
-        {
-            throw new NotImplementedException();
-        }
     }
+
 }

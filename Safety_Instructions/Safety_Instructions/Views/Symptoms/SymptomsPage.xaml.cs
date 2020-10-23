@@ -21,7 +21,7 @@ namespace Safety_Instructions.Views.Symptoms
 
         private async void load()
         {
-            await (this.BindingContext as ViewModels.Symptoms.SymptomsViewModel).loadresultAsync();
+            (this.BindingContext as ViewModels.Symptoms.SymptomsViewModel).loadresult();
         }
     }
 }
